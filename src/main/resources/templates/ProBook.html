@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style6.css" />
+    <title>Book room</title>
+</head>
+<body>
+    <body>
+        <div class="dashboard">
+            <nav class="sidebar">
+                <div class="logo-container">
+                    <img src="/img/logo_sdy_dash.png" alt="SDU Logo" class="logo-img">
+                </div>
+                <div class="nav-items">
+                    <a href="/dining" class="nav-item">
+                        <span class="nav-icon">
+                            <img src="/img/coffee_icon.png" alt="home_icon" class="home_icon">
+                        </span>
+                    </a>
+                    <a href="/home" class="nav-item">
+                        <span class="nav-icon">
+                            <img src="/img/person_icon.png" alt="coffee_icon" class="coffee_icon">
+                        </span>
+                    </a>
+                </div>
+            </nav>
+            <main class="main-content">
+                <header class="dashboard-header">
+                    <div class="user-profile">
+                        <div class="profile-icon">
+                            <img src="/img/home_icon.png" alt="person_icon" class="person_icon">
+                        </div>
+                    </div>
+                    <a href="/logout" class="exit-button">Exit</a>
+                </header>
+                <div class="info-container dining-container">
+                    <img class="mainimg" src="/img/plan.png" alt="">
+
+                    <form action="/dorm/booking" method="post">
+                        <div class="input-group">
+                            <label>Number of Corpus</label>
+                            <div class="custom-select">
+                                <label>
+                                    <select name="corpus">
+                                        <option value="1">1 Corpus</option>
+                                        <option value="2">2 Corpus</option>
+                                        <option value="3">3 Corpus</option>
+                                        <option value="4">4 Corpus</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Number of Floor</label>
+                            <div class="custom-select">
+                                <label>
+                                    <select name="floor">
+                                        <option value="2">2 Floor</option>
+                                        <option value="3">3 Floor</option>
+                                        <option value="4">4 Floor</option>
+                                        <option value="5">5 Floor</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Number of Rooms</label>
+                            <div class="custom-select">
+                                <label>
+                                    <select name="roomNumber">
+                                        <option value="1">1 Room</option>
+                                        <option value="2">2 Room</option>
+                                        <option value="3">3 Room</option>
+                                        <option value="4">4 Room</option>
+                                        <option value="5">5 Room</option>
+                                        <option value="6">6 Room</option>
+                                        <option value="7">7 Room</option>
+                                        <option value="8">8 Room</option>
+                                        <option value="9">9 Room</option>
+                                        <option value="10">10 Room</option>
+                                        <option value="11">11 Room</option>
+                                        <option value="12">12 Room</option>
+                                        <option value="13">13 Room</option>
+                                        <option value="14">14 Room</option>
+                                        <option value="15">15 Room</option>
+                                        <option value="16">16 Room</option>
+                                        <option value="17">17 Room</option>
+                                        <option value="18">18 Room</option>
+                                        <option value="19">19 Room</option>
+                                        <option value="20">20 Room</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="show-room-btn">Show Room</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    
+    </body>
+</body>
+</html>

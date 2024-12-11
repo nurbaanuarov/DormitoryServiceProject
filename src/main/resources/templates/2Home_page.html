@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleMain2.css" />
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="sidebar">
+          <div class="logo-container">
+            <img src="/img/logo_sdy_dash.png" alt="SDU Logo" class="logo-img">
+          </div>
+          <div class="nav-items">
+            <a href="/dorm" class="nav-item ">
+              <span class="nav-icon"> <img src="/img/home_icon.png" alt="home_icon" class="home_icon"></span>
+            </a>
+            <a href="/dining" class="nav-item">
+              <span class="nav-icon"><img src="/img/coffee_icon.png" alt="coffee_icon" class="coffee_icon"></span>
+            </a>
+          </div>
+        </nav>
+        <main class="main-content">
+          <header class="dashboard-header">
+            <div class="user-profile">
+              <div class="profile-icon"><img src="/img/person_icon.png" alt="person_icon" class="person_icon"></div>
+            </div>
+            <button onclick="handleLogout()" class="exit-button">Exit</button>
+          </header>
+          <div class="info-container">
+            <h1>Information about student</h1>
+            <div class="student-info">
+              <div class="info-row">
+                <span class="info-label">Balance:</span>
+                <span class="info-value">999 $</span>
+                <span class="info-icon"> <img src="/img/circle_plus.png" alt="circle_plus" class="plus_circle"></span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Name:</span>
+                <span class="info-value" th:text="${name}">Baidaulet</span>
+                <span class="info-icon"><img src="/img/Smile.png" alt="smile" class="plus_circle"></span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Email:</span>
+                <span class="info-value" th:text="${email}">220103179@stu.sdu.edu.kz</span>
+                <span class="info-icon"><img src="/img/email_icon.png" class="plus_circle" alt="mail"></span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Graduation date:</span>
+                <span class="info-value">2026</span>
+                <span class="info-icon"><img src="/img/Calendar.png" class="plus_circle" alt=""></span>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+</body>
+</html>
+
+<script>
+  function handleLogout() {
+    window.location.href = '/logout'; // Replace '/signup.html' with your actual signup page URL
+  }
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleMain3.css" />
+    <script src="/js/signup.js" defer></script>
+    <title>Login Page</title>
+</head>
+<body>
+<section>
+    <div class="login-container">
+        <div class="logo">
+          <img src="/img/sdu_logo.png" alt="SDU Logo" class="logo-img">
+          <span>SDU Dorm Service</span>
+        </div>
+        <div class="login-header">Log In</div>
+        <form action="/login" th:method="POST">
+            <p th:if="${param.error}" style="color: red;">Invalid email or password.</p>
+            <div class="input-group">
+              <label for="email"></label><input name="email" id="email" type="email" placeholder="E-mail" required>
+            <img src="/img/email_icon.png" alt="email icon" class="input-icon">
+          </div>
+          <div class="input-group">
+              <label for="password"></label><input name="password" id="password" type="password" placeholder="Password" required>
+            <img src="/img/Lock.png" alt="lock icon" class="input-icon">
+          </div>
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox">
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
+            <button type="submit" class="primary-button">Log In</button>
+        </form>
+        <div class="divider">
+          <span>or</span>
+        </div>
+        <button class="secondary-button" onclick="navigateToSignup()"><a>Sign Up</a></button>
+      </div>
+</section>
+</body>
+</html>

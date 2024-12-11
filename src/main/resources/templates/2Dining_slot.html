@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleMain.css" />
+    <title>Dining Slot Page</title>
+</head>
+<body>
+<div class="dashboard">
+    <nav class="sidebar">
+        <div class="logo-container">
+            <img src="/img/logo_sdy_dash.png" alt="SDU Logo" class="logo-img">
+        </div>
+        <div class="nav-items">
+            <a href="/dorm" class="nav-item">
+                    <span class="nav-icon">
+                        <img src="/img/home_icon.png" alt="home_icon" class="home_icon">
+                    </span>
+            </a>
+            <a href="/home" class="nav-item active">
+                    <span class="nav-icon">
+                        <img src="/img/person_icon.png" alt="coffee_icon" class="coffee_icon">
+                    </span>
+            </a>
+        </div>
+    </nav>
+    <main class="main-content">
+        <header class="dashboard-header">
+            <div class="user-profile">
+                <div class="profile-icon">
+                    <img src="/img/coffee_icon.png" alt="person_icon" class="person_icon">
+                </div>
+            </div>
+            <a href="/logout" class="exit-button">Exit</a>
+        </header>
+        <div class="info-container dining-container">
+            <h1>Book Your Dining Time</h1>
+            <form id="dining-form" th:action="@{/dining}" method="post" class="time-slots">
+                <!-- Loop through time slots -->
+                <div th:each="slot : ${timeSlots}" class="time-slot-group">
+                    <input type="radio"
+                           th:id="'time-' + ${slot.startTime.toString().substring(0,5)}"
+                           th:name="'time-slot'"
+                           th:value="${slot.startTime}"
+                           th:disabled="${slot.capacity == 0 or slot.pastTime or isInQueue}"
+                           class="time-radio">
+
+                    <label th:for="'time-' + ${slot.startTime.toString().substring(0,5)}" class="time-slot">
+                        <span class="time-text" th:text="${slot.startTime.toString().substring(0,5)}">18:00</span>
+                        <span class="seats-left" th:text="${slot.capacity + ' seats left'}">12 seats left</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="book-button" th:text="${isInQueue ? 'Cancel Queue' : 'Join Queue'}"></button>
+            </form>
+
+            <!-- Display message if the user is in the queue -->
+            <div th:if="${isInQueue}">
+                <p>You are in the queue for the time slot: <span th:text="${queueTimeSlot.startTime.toString().substring(0,5)}">18:00</span></p>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

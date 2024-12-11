@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style7.css" />
+    <title>Book Bed</title>
+</head>
+<body>
+    <body>
+        <div class="dashboard">
+            <nav class="sidebar">
+                <div class="logo-container">
+                    <img src="/img/logo_sdy_dash.png" alt="SDU Logo" class="logo-img">
+                </div>
+                <div class="nav-items">
+                    <a href="/dining" class="nav-item">
+                        <span class="nav-icon">
+                            <img src="/img/coffee_icon.png" alt="home_icon" class="home_icon">
+                        </span>
+                    </a>
+                    <a href="/home" class="nav-item">
+                        <span class="nav-icon">
+                            <img src="/img/person_icon.png" alt="coffee_icon" class="coffee_icon">
+                        </span>
+                    </a>
+                </div>
+            </nav>
+            <main class="main-content">
+                <header class="dashboard-header">
+                    <div class="user-profile">
+                        <div class="profile-icon">
+                            <img src="/img/home_icon.png" alt="person_icon" class="person_icon">
+                        </div>
+                    </div>
+                    <a href="/logout" class="exit-button">Exit</a>
+                </header>
+                <div class="info-container dining-container">
+                    <img class="mainimg" src="/img/roomsdu.png" alt="">
+
+                    <div class="config-form">
+
+                        <div class="input-group">
+                            <label for="room-capacity">Room Information</label>
+                            <div id="room-capacity" class="info-box" th:text="'Capacity of the room: ' + ${capacity}">
+                                <!-- Placeholder for Thymeleaf to populate -->
+                            </div>
+                            <label for="booking-info">Booking Information</label>
+                            <div id="booking-info" class="info-box">
+                                If you want to pay for the room immediately, please book it and pay on the next page.
+                            </div>
+                        </div>
+
+
+                        <form action="/dorm/show-room" method="post" th:if="${showBookButton}">
+                            <input type="hidden" name="roomId" th:value="${roomId}" />
+                            <button type="submit" class="show-room-btn">Book</button>
+                        </form>
+
+                        <form action="/dorm/not" th:if="${!showBookButton}">
+                            <button type="submit" class="show-room-btn">Back To Dorm</button>
+                        </form>
+
+                    </div>
+                </div>
+                </div>
+            </main>
+        </div>
+    
+    </body>
+</body>
+</html>

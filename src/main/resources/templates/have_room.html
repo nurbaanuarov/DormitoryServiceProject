@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleMain23.css" />
+    <title>Your Room is Ready</title>
+</head>
+
+<body>
+    <div class="dashboard">
+        <nav class="sidebar">
+            <div class="logo-container">
+                <img src="/img/logo_sdy_dash.png" alt="SDU Logo" class="logo-img">
+            </div>
+            <div class="nav-items">
+                <a href="/home" class="nav-item ">
+                    <span class="nav-icon"> <img src="/img/person_icon.png" alt="home_icon" class="home_icon"></span>
+                </a>
+                <a href="/dining" class="nav-item">
+                    <span class="nav-icon"><img src="/img/coffee_icon.png" alt="coffee_icon" class="coffee_icon"></span>
+                </a>
+            </div>
+        </nav>
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="user-profile">
+                    <div class="home_icon"><img src="/img/home_icon.png" alt="person_icon" class="person_icon"></div>
+                </div>
+                <button onclick="handleLogout()" class="exit-button">Exit</button>
+            </header>
+            <div class="info-container">
+                <h1><img src="/img/user.png" alt=""></h1>
+                <div class="student-info">
+                    <div class="info-row">
+                        <span class="info-label">Name:</span>
+                        <span class="info-value" th:text="${name}">Baidaulet</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Corpus: </span>
+                        <span class="info-value" th:text="${corpus}">?</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Floor: </span>
+                        <span class="info-value" th:text="${floor}">?</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Room: </span>
+                        <span class="info-value" th:text="${number}">?</span>
+                    </div>
+                    <span>
+                        <p class="booking_confirmed">You have a room ! <br>
+                            Congratulations! <br> Your room is reserved, and all details have been confirmed.
+                        </p>
+                    </span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function handleLogout() {
+        window.location.href = '/logout'; // Replace '/signup.html' with your actual signup page URL
+    }
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleMain4.css"/>
+    <script src="/js/signup.js" defer></script>
+    <title>Sign Up Page</title>
+</head>
+<body>
+<section>
+    <div class="login-container signup-container">
+        <div class="logo">
+          <img src="/img/sdu_logo.png" alt="SDU Logo" class="logo-img">
+          <span>SDU Dorm Service</span>
+        </div>
+        <div class="login-header">Sign Up</div>
+        <form class="login-form">
+          <div class="input-group">
+              <label for="name"></label><input type="text" id= "name" name="name" placeholder="Name" required>
+            <img src="/img/user_icon.png" alt="user icon" class="input-icon">
+          </div>
+          <div class="input-group">
+              <label for="email"></label><input type="email" id="email" name="email" placeholder="E-mail" required>
+            <img src="/img/email_icon.png" alt="email icon" class="input-icon">
+          </div>
+          <div class="input-group">
+              <label for="password"></label><input type="password" id="password" name="password" placeholder="Password" required>
+            <img src="/img/Lock.png" alt="lock icon" class="input-icon">
+          </div>
+          <div class="form-options">
+            <label class="remember-me terms">
+              <input type="checkbox" required>
+              <span>I agree to the terms & conditions</span>
+            </label>
+          </div>
+          <button id="submit" type="submit" class="primary-button">Sign Up</button>
+        </form>
+        <div class="login-link">
+          Already have an account? <a href="/login" onclick="navigateToLogin()">Back to Log In</a>
+        </div>
+      </div>
+</section>
+</body>
+</html>
+<script>
+    const submitButton = document.getElementById("submit");
+    submitButton.addEventListener('click',()=>{
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const data ={
+            name,
+            email,
+            password
+        }
+
+        const jsonData = JSON.stringify(data);
+        fetch('/registration', {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: jsonData
+        })
+            .then(response =>{
+                //alert('succesfull');
+                //if(response.status == 200){
+                //alert('succesfull');
+                //xs}
+            })
+
+    })
+
+
+</script>
