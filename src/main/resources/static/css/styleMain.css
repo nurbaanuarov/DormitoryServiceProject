@@ -339,4 +339,12 @@ body::before {
 .disabled {
   opacity: 0.5;
   pointer-events: none; /* Prevent clicking */
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.time-radio:disabled {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
